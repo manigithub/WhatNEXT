@@ -1,0 +1,39 @@
+Operating System:
+=================
+
+Microsoft Windows 7
+
+
+Tools:
+======
+
+Microsoft Visual Studio 2010
+
+Resharper 5 - Trial Version
+
+Notepad++
+
+
+Open Source Projects:
+=====================
+1. Nunit - http://www.nunit.org/  - Unit Testing Tool
+
+2. Ninject! - http://ninject.org/ - Dependency Injection Container
+
+3. 
+
+
+
+Programming Language:
+======================
+
+C# - 4.0 
+
+
+Framework
+==========
+
+.NET 4.0
+
+
+
