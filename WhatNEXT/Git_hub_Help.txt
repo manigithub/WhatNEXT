@@ -1,0 +1,37 @@
+Welcome to Git (version 1.7.4-preview20110204)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+
+d:/2011/MyProjects (master)
+
+$ git init
+Reinitialized existing Git repository in D:/2011/MyProjects/.git/
+
+d:/2011/MyProjects (master)
+$
+
+d:/2011/MyProjects (master)
+$ git commit -m 'first commit'
+# On branch master
+nothing to commit (working directory clean)
+
+d:/2011/MyProjects (master)
+$  git remote add origin git@github.com:manigithub/WhatNEXT.git
+
+
+d:/2011/MyProjects (master)
+$  git push -u origin master
+Enter passphrase for key 
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 592 bytes, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To git@github.com:manigithub/WhatNEXT.git
+   3087df5..ef22240  master -> master
+Branch master set up to track remote branch master from origin.
+
+(master)
+$
