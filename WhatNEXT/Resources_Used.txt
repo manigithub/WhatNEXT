@@ -13,6 +13,8 @@ Resharper 5 - Trial Version
 
 Notepad++
 
+Git & GitHub - Version control
+
 
 Open Source Projects:
 =====================
