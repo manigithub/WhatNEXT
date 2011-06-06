@@ -5,12 +5,5 @@ using System.Text;
 
 namespace WhatNEXT
 {
-    class Program
-    {
-        //static void Main(string[] args)
-        //{
-
-
-        //}
-    }
+    public delegate void AddTaskEventHandler(object sender, TaskAddEventArgs e);
 }

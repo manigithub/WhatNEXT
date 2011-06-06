@@ -18,8 +18,14 @@ namespace WhatNEXT
             get { return taskItems; }
         }
 
+        public SimpleTaskList()
+        {
+            Console.WriteLine("from simpletasklist added");
+        }
+
         public void AddTask(TaskItem taskItem)
         {
+            
 
             if (taskItem == null || null != FindTaskByID(taskItem.ID))
             {
@@ -75,12 +81,13 @@ namespace WhatNEXT
 
         public byte[] ExportTask(List<TaskItem> taskList, Enumerations.ContentType contentType)
         {
-            var xs = new XmlSerializer(typeof(List<TaskItem>));
+            var xmlSerializer = new XmlSerializer(typeof(List<TaskItem>));
 
-            Stream s = new MemoryStream();
-            xs.Serialize(s, taskList);
+            MemoryStream memoryStream = new MemoryStream();
+            xmlSerializer.Serialize(memoryStream, taskList);
 
-            return Utility.GetByteArray(s);
+            return memoryStream.GetBuffer();
+
         }
 
         public List<TaskItem> GetAll()

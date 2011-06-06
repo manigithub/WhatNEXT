@@ -19,7 +19,9 @@ namespace WhatNEXT
         {
             kernel = new StandardKernel();
 
-            kernel.Bind<ITaskList>().To<SimpleTaskList>();
+            kernel.Bind<ITaskList>().To<TaskEventGenerator>();//TaskEventGenerator
+            //kernel.Bind<ITaskListWithEvents>().To<TaskEventGenerator>();
+            kernel.Bind<ITaskList>().To<SimpleTaskList>().WhenInjectedInto<TaskEventGenerator>();
 
             //kernel.Bind<TaskListFactory>().ToSelf();
 
@@ -42,6 +44,10 @@ namespace WhatNEXT
         {
 
             return kernel.Get<ITaskList>();
+        }
+        public ITaskListWithEvents CreateTaskListWithEvents()
+        {
+            return kernel.Get<ITaskListWithEvents>();
         }
 
         public static void Main()
