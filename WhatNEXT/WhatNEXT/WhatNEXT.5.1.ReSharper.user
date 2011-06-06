@@ -1,0 +1,152 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskList.cs" caret="316" fromTop="12" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:Program.cs" caret="218" fromTop="16" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="450" fromTop="15" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="1653" fromTop="17" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="371" fromTop="20" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskItem.cs" caret="300" fromTop="12" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="922" fromTop="14" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="259" fromTop="12" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="259" fromTop="21" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="416" fromTop="25" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="259" fromTop="0" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="574" fromTop="13" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="2397" fromTop="26" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="3047" fromTop="11" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="2075" fromTop="33" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1620" fromTop="17" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1762" fromTop="20" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1959" fromTop="12" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1632" fromTop="6" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="2442" fromTop="21" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="3047" fromTop="20" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="925" fromTop="9" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1256" fromTop="15" />
+      <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="1500" fromTop="19" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskList.cs" caret="304" fromTop="12" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="1091" fromTop="9" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="780" fromTop="27" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:Program.cs" caret="227" fromTop="16" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="104" fromTop="4" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="855" fromTop="31" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="364" fromTop="15" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="287" fromTop="11" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="471" fromTop="19" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="611" fromTop="23" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskListFactory.cs" caret="825" fromTop="31" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="1653" fromTop="17" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="7" />
+      <Item value="void" priority="3" />
+      <Item value="using" priority="2" />
+      <Item value="Ninject" priority="1" />
+      <Item value="new" priority="8" />
+      <Item value="ApplicationException`0" priority="1" />
+      <Item value="ITaskList`0" priority="4" />
+      <Item value="Exception`0" priority="1" />
+      <Item value="Assert`0" priority="1" />
+      <Item value="typeof" priority="1" />
+      <Item value="t" priority="4" />
+      <Item value="simpleTaskList" priority="0" />
+      <Item value="Task`0" priority="0" />
+      <Item value="prop" priority="1" />
+      <Item value="Int64`0" priority="3" />
+      <Item value="System" priority="0" />
+      <Item value="Net" priority="0" />
+      <Item value="Sockets" priority="0" />
+      <Item value="IPAddress`0" priority="0" />
+      <Item value="TaskItem`0" priority="4" />
+      <Item value="taskItem" priority="1" />
+      <Item value="string" priority="0" />
+      <Item value="private" priority="2" />
+      <Item value="TaskItem" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="List&lt;TaskItem&gt;" priority="0" />
+      <Item value="return" priority="5" />
+      <Item value="if" priority="5" />
+      <Item value="taskItems" priority="1" />
+      <Item value="Convert`0" priority="0" />
+      <Item value="taskID" priority="0" />
+      <Item value="else" priority="2" />
+      <Item value="throw" priority="2" />
+      <Item value="AbandonedMutexException" priority="0" />
+      <Item value="ID" priority="1" />
+      <Item value="Details" priority="0" />
+      <Item value="ApplicationException" priority="1" />
+      <Item value="null" priority="1" />
+      <Item value="AppDomainUnloadedException" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="long" priority="0" />
+      <Item value="static" priority="1" />
+      <Item value="IKernel`0" priority="0" />
+      <Item value="kernel" priority="0" />
+      <Item value="SimpleTaskList`0" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="override" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="IsTrue`0" priority="2" />
+      <Item value="AreEqual`0" priority="4" />
+      <Item value="Throws`1" priority="0" />
+      <Item value="That`0" priority="1" />
+      <Item value="IsNotNullOrEmpty`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.IKernel">
+      <Item value="Dispose`0" priority="0" />
+      <Item value="Bind`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="0" />
+      <Item value="Find`0" priority="0" />
+      <Item value="Count" priority="1" />
+      <Item value="IndexOf`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WhatNEXT.TaskItem">
+      <Item value="ID" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt64`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int64">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Syntax.IBindingToSyntax`1">
+      <Item value="ToMethod`0" priority="0" />
+      <Item value="To`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WhatNEXT.TaskListFactory">
+      <Item value="GetInstance`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WhatNEXT.TaskListFactory">
+      <Item value="CreateList`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

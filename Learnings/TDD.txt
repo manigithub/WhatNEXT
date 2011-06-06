@@ -1,0 +1,30 @@
+Test Driven Development - TDD
+===============================
+
+1. Test First Development - Write Tests->Fail Tests->Write Code->Run Tests--->Fix Bugs-->No Bugs--->Refactor if required.
+
+2. Red (Test's Fail)-Green (Tests's Pass)-Refactor(Renaming method, splitting complex method into multiple etc).
+
+3. Entity classes - Pure getter and setter alone, should not have Unit Tests. No need. waste of time.
+
+4. Test should force the design changes.  If a module is not testable, need to change the design.
+
+5. Each TestCase should be stateless
+
+6. A test case should test the core functionality. Not getters and setters.
+
+7. Develop everything as stateless.  You develop differently.
+
+
+
+
+
+
+
+
+
+
+
+References:
+==============
+The Art of UNIT TESTING with Examples in .NET - ROY OSHEROVE

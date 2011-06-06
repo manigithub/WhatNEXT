@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Xml.Serialization;
+
 
 namespace WhatNEXT
 {
-    public class SimpleTaskList: ITaskList
+    public class SimpleTaskList : ITaskList     
     {
         private List<TaskItem> taskItems = new List<TaskItem>();
 
@@ -17,20 +20,19 @@ namespace WhatNEXT
 
         public void AddTask(TaskItem taskItem)
         {
-            if (taskItem != null)
-            {
-                TaskItems.Add(taskItem);
-            }
-            else
+
+            if (taskItem == null || null != FindTaskByID(taskItem.ID))
             {
                 throw new ApplicationException("");
             }
+            TaskItems.Add(taskItem);
+
         }
         public void UpdateTask(TaskItem taskItemUpdated)
         {
-            TaskItem taskItemCurrent = FindTaskByID(taskItemUpdated.ID.ToString());
+            TaskItem taskItemCurrent = FindTaskByID(taskItemUpdated.ID);
 
-            if(taskItemCurrent != null)
+            if (taskItemCurrent != null)
             {
                 TaskItems[TaskItems.IndexOf(taskItemCurrent)] = taskItemUpdated;
             }
@@ -39,16 +41,12 @@ namespace WhatNEXT
                 throw new ApplicationException();
             }
         }
-        public TaskItem FindTaskByID(string taskID)
+        public TaskItem FindTaskByID(Int64 taskID)
         {
-            TaskItem taskItem = TaskItems.Find((t) => t.ID == Convert.ToInt64(taskID));
 
-            if (taskItem != null)
-                return taskItem;
+            return TaskItems.Find((t) => t.ID == taskID);
 
-            throw new ApplicationException();
         }
-
         public long GetCount()
         {
             return TaskItems.Count;
@@ -57,6 +55,37 @@ namespace WhatNEXT
         private int GetIndexOfTaskItem(TaskItem t)
         {
             return TaskItems.IndexOf(t);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " SimpleTaskList";
+        }
+
+        public void DeleteTask(TaskItem taskItem)
+        {
+
+            bool isTaskItemRemoved = TaskItems.Remove(taskItem);
+
+            if (isTaskItemRemoved == false)
+            {
+                throw new ApplicationException();
+            }
+        }
+
+        public byte[] ExportTask(List<TaskItem> taskList, Enumerations.ContentType contentType)
+        {
+            var xs = new XmlSerializer(typeof(List<TaskItem>));
+
+            Stream s = new MemoryStream();
+            xs.Serialize(s, taskList);
+
+            return Utility.GetByteArray(s);
+        }
+
+        public List<TaskItem> GetAll()
+        {
+            return TaskItems;
         }
     }
 }

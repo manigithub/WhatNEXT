@@ -1816,11 +1816,6 @@
             Gets the callback for thread scope.
             </summary>
         </member>
-        <member name="F:Ninject.Infrastructure.StandardScopeCallbacks.Request">
-            <summary>
-            Gets the callback for request scope.
-            </summary>
-        </member>
         <member name="T:Ninject.Injection.ConstructorInjector">
             <summary>
             A delegate that can inject values into a constructor.
@@ -2779,12 +2774,6 @@
             Indicates that instances activated via the binding should be re-used within the same thread.
             </summary>
         </member>
-        <member name="M:Ninject.Syntax.IBindingInSyntax`1.InRequestScope">
-            <summary>
-            Indicates that instances activated via the binding should be re-used within the same
-            HTTP request.
-            </summary>
-        </member>
         <member name="M:Ninject.Syntax.IBindingInSyntax`1.InScope(System.Func{Ninject.Activation.IContext,System.Object})">
             <summary>
             Indicates that instances activated via the binding should be re-used as long as the object
@@ -3059,12 +3048,6 @@
         <member name="M:Ninject.Planning.Bindings.BindingBuilder`1.InThreadScope">
             <summary>
             Indicates that instances activated via the binding should be re-used within the same thread.
-            </summary>
-        </member>
-        <member name="M:Ninject.Planning.Bindings.BindingBuilder`1.InRequestScope">
-            <summary>
-            Indicates that instances activated via the binding should be re-used within the same
-            HTTP request.
             </summary>
         </member>
         <member name="M:Ninject.Planning.Bindings.BindingBuilder`1.InScope(System.Func{Ninject.Activation.IContext,System.Object})">
@@ -4630,34 +4613,6 @@
             <value>
             	<c>true</c> if null is allowed as injected value otherwise false.
             </value>
-        </member>
-        <member name="T:Ninject.OnePerRequestModule">
-            <summary>
-            Provides callbacks to more aggressively collect objects scoped to HTTP requests.
-            </summary>
-        </member>
-        <member name="M:Ninject.OnePerRequestModule.Init(System.Web.HttpApplication)">
-            <summary>
-            Initializes the module.
-            </summary>
-            <param name="application">The <see cref="T:System.Web.HttpApplication"/> whose instances will be managed.</param>
-        </member>
-        <member name="M:Ninject.OnePerRequestModule.StartManaging(Ninject.IKernel)">
-            <summary>
-            Start managing instances for the specified kernel.
-            </summary>
-            <param name="kernel">The kernel.</param>
-        </member>
-        <member name="M:Ninject.OnePerRequestModule.StopManaging(Ninject.IKernel)">
-            <summary>
-            Stops managing instances for the specified kernel.
-            </summary>
-            <param name="kernel">The kernel.</param>
-        </member>
-        <member name="M:Ninject.OnePerRequestModule.DeactivateInstancesForCurrentHttpRequest">
-            <summary>
-            Deactivates instances owned by the current <see cref="T:System.Web.HttpContext"/>.
-            </summary>
         </member>
         <member name="T:Ninject.StandardKernel">
             <summary>

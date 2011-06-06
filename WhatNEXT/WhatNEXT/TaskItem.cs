@@ -10,6 +10,11 @@ namespace WhatNEXT
     {
         public Int64 ID { get; set; }
         public string Details { get; set; }
-        public IPAddress IpAddress { get; set; }
+        public string IpAddress { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return ID == ((TaskItem) obj).ID;
+        }
     }
 }

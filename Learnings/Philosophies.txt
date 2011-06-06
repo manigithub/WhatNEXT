@@ -1,0 +1,18 @@
+1. A Task at a time - Reminder also only one task at a time
+
+2. SRP - Single Responsibility
+
+3. better late than never
+
+4. Prefer simplicity over features.
+
+5. Early To Fail or Fast to Break.
+
+6. 5 tasks are in right format. but one task is not in correct format.
+   Fail all import tasks/export tasks.
+
+
+7. Black Swan Theory.
+
+
+8.
