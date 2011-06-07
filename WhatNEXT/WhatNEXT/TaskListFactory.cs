@@ -19,7 +19,7 @@ namespace WhatNEXT
         {
             kernel = new StandardKernel();
 
-            kernel.Bind<ITaskList>().To<TaskEventGenerator>();//TaskEventGenerator
+            kernel.Bind<ITaskList>().To<TaskEventGenerator>().InSingletonScope();//TaskEventGenerator
             //kernel.Bind<ITaskListWithEvents>().To<TaskEventGenerator>();
             kernel.Bind<ITaskList>().To<SimpleTaskList>().WhenInjectedInto<TaskEventGenerator>();
 
@@ -56,7 +56,8 @@ namespace WhatNEXT
 
         //public static void Main()
         //{
-        //    Console.WriteLine(TaskListFactory.GetInstance().CreateList());
+        //    Console.WriteLine(TaskListFactory.GetInstance().CreateList().GetHashCode());
+        //    Console.WriteLine(TaskListFactory.GetInstance().CreateList().GetHashCode());
         //}
 
 

@@ -12,20 +12,16 @@ namespace WhatNEXT
         {
             ITaskList list = TaskListFactory.GetInstance().CreateList();
             TaskScheduler taskScheduler = TaskScheduler.GetTaskScheduler();
-            CommandInterpreter commandInterpreter = new CommandInterpreter(taskScheduler);
-            ScheduledTasksLogger tasksLogger = new ScheduledTasksLogger(taskScheduler);
-            
-
+            ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(taskScheduler.TaskScheduler_Add);
+            CommandInterpreter commandInterpreter = new CommandInterpreter();
+            ScheduledTasksLogger tasksLogger = new ScheduledTasksLogger();
+            taskScheduler.Schedule += new TaskSchedulerEventHandler(tasksLogger.taskScheduler_Schedule);
+            taskScheduler.Schedule += new TaskSchedulerEventHandler(commandInterpreter.taskScheduler_Schedule);
             ITaskParser taskParser = TaskListFactory.GetInstance().CreateTaskParser();
             TaskItem taskItem = taskParser.Parse(taskDetails);
 
-            
             list.AddTask(taskItem);
-
-            
-
             Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
-            
         }
     }
 }

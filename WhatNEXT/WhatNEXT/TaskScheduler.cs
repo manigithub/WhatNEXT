@@ -10,6 +10,7 @@ namespace WhatNEXT
     {
         public event TaskSchedulerEventHandler Schedule;
         private static TaskScheduler taskScheduler;
+        private Timer taskTimer;
 
         public static TaskScheduler GetTaskScheduler()
         {
@@ -38,18 +39,18 @@ namespace WhatNEXT
         }
         private TaskScheduler()
         {
-            ITaskList list = TaskListFactory.GetInstance().CreateList();
+        //    ITaskList list = TaskListFactory.GetInstance().CreateList();
 
-            ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(TaskScheduler_Add);
+        //    ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(TaskScheduler_Add);
 
         }
-        void TaskScheduler_Add(object sender, TaskAddEventArgs e)
+        public void TaskScheduler_Add(object sender, TaskAddEventArgs e)
         {
             ScheduleTask(e.Task);
         }
-        public void ScheduleTask(TaskItem taskItem)
+        private void ScheduleTask(TaskItem taskItem)
         {
-            var taskTimer = new Timer(new TimerCallback(OnSchedule),
+             taskTimer = new Timer(new TimerCallback(OnSchedule),
                                         new TaskScheduleEventArgs(taskItem), taskItem.TimeReminder, Timeout.Infinite);
         }
         public void ScheduleDummyTask()
