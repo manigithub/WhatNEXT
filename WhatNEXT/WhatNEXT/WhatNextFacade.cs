@@ -25,7 +25,7 @@ namespace WhatNEXT
             return facade;
 
         }
-        public ITaskList CreateList()
+        public ITaskList CreateTaskList()
         {
             return kernel.Get<ITaskList>();
         }

@@ -26,7 +26,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void AddSingleTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
 
             list.AddTask(new TaskItem() { ID = 1});
 
@@ -36,7 +36,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void AddDualTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
 
             list.AddTask(new TaskItem() { ID = 1 });
             list.AddTask(new TaskItem() { ID = 2 });
@@ -48,7 +48,7 @@ namespace WhatNEXT.Tests
         [ExpectedException(typeof(ApplicationException))]
         public void AddExistingTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
 
             list.AddTask(new TaskItem() { ID = 1 });
             list.AddTask(new TaskItem() { ID = 1 });
@@ -60,7 +60,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void FindTaskByID()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
 
             list.AddTask(new TaskItem() { ID = 1 });
 
@@ -72,7 +72,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void UpdateTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             TaskItem taskBeforeUpdate = list.FindTaskByID(1);
             list.UpdateTask(new TaskItem() { ID = 1, Details = "Updated Task Details" });
@@ -86,7 +86,7 @@ namespace WhatNEXT.Tests
         [ExpectedException(typeof(ApplicationException))]
         public void UpdateTask_To_TaskListWithZeroTasks_ThrowsTaskDoesNotExistException()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             list.UpdateTask(new TaskItem() { ID = 1000 });
             Assert.Throws<ApplicationException>(() => { throw new ApplicationException(); });
@@ -97,7 +97,7 @@ namespace WhatNEXT.Tests
         [ExpectedException(typeof(ApplicationException))]
         public void UpdateTask_To_TaskListWithOneOrMoreTasks_TaskIDDoesNotExist_ThrowsTaskDoesNotExistException()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             list.UpdateTask(new TaskItem() { ID = 1001 });
             Assert.Throws<ApplicationException>(() => { throw new ApplicationException(); });
@@ -107,7 +107,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void DeleteTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             list.DeleteTask(new TaskItem(){ID = 1});
             Assert.IsTrue(list.GetCount() == 0);
@@ -116,7 +116,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void DeleteMultipleTasks()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             list.AddTask(new TaskItem() { ID = 2 });
             list.AddTask(new TaskItem() { ID = 3 });
@@ -129,7 +129,7 @@ namespace WhatNEXT.Tests
         [ExpectedException(typeof(ApplicationException))]
         public void DeleteInvalidTask()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.DeleteTask(new TaskItem() { ID = 10 });
             Assert.Throws<ApplicationException>(() => { throw new ApplicationException(); });
             
@@ -139,7 +139,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void GetTasksList()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1 });
             list.AddTask(new TaskItem() { ID = 2 });
             list.AddTask(new TaskItem() { ID = 3 });
@@ -150,7 +150,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void ExportTasks()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1, Details = "Task one details"});
             list.AddTask(new TaskItem() { ID = 2, Details = "Task one details" });
             list.AddTask(new TaskItem() { ID = 3, Details = "Task one details" });//TODO: Check with IP address
@@ -163,7 +163,7 @@ namespace WhatNEXT.Tests
         [Test]
         public void ExportTasksToXML()
         {
-            ITaskList list = WhatNextFacade.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
             list.AddTask(new TaskItem() { ID = 1, Details = "Task one details" });
             list.AddTask(new TaskItem() { ID = 2, Details = "Task one details" });
             list.AddTask(new TaskItem() { ID = 3, Details = "Task one details" });//TODO: Check with IP address
