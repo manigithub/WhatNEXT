@@ -79,12 +79,12 @@ namespace WhatNEXT
             }
         }
 
-        public byte[] ExportTask(List<TaskItem> taskList, Enumerations.ContentType contentType)
+        public byte[] ExportTask(List<TaskItem> taskItems, Enumerations.ContentType contentType)
         {
             var xmlSerializer = new XmlSerializer(typeof(List<TaskItem>));
 
             MemoryStream memoryStream = new MemoryStream();
-            xmlSerializer.Serialize(memoryStream, taskList);
+            xmlSerializer.Serialize(memoryStream, taskItems);
 
             return memoryStream.GetBuffer();
 

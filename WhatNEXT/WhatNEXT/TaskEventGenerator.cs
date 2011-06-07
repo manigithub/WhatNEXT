@@ -9,12 +9,7 @@ namespace WhatNEXT
     {
         private ITaskList taskList;//why private - outside world should not know. proxy attendance cannot given public
         public event AddTaskEventHandler Add;
-        private List<TaskItem> taskItems = new List<TaskItem>();
-
-        public List<TaskItem> TaskItems
-        {
-            get { return taskItems; }
-        }
+        
 
         public TaskEventGenerator(ITaskList taskList)
         {
@@ -33,14 +28,8 @@ namespace WhatNEXT
         }
         public void AddTask(TaskItem taskItem)
         {
-
-            if (taskItem == null || null != FindTaskByID(taskItem.ID))
-            {
-                throw new ApplicationException("");
-            }
-            TaskItems.Add(taskItem);
+            taskList.AddTask(taskItem);
             OnAdd(new TaskAddEventArgs(taskItem.ID));
-
         }
         public void UpdateTask(TaskItem taskItem)
         {
@@ -49,7 +38,7 @@ namespace WhatNEXT
 
         public TaskItem FindTaskByID(long taskID)
         {
-            return TaskItems.Find((t) => t.ID == taskID);
+            return taskList.FindTaskByID(taskID);
         }
 
         public long GetCount()
@@ -62,8 +51,9 @@ namespace WhatNEXT
             throw new NotImplementedException();
         }
 
-        public byte[] ExportTask(List<TaskItem> taskList, Enumerations.ContentType contentType)
+        public byte[] ExportTask(List<TaskItem> taskItems, Enumerations.ContentType contentType)
         {
+            
             throw new NotImplementedException();
         }
 

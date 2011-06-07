@@ -13,7 +13,7 @@ namespace WhatNEXT
         TaskItem FindTaskByID(Int64 taskID);
         Int64 GetCount();
         void DeleteTask(TaskItem taskItem);
-        byte[] ExportTask(List<TaskItem> taskList, Enumerations.ContentType contentType);
+        byte[] ExportTask(List<TaskItem> taskItems, Enumerations.ContentType contentType);
         List<TaskItem> GetAll();
     }
 }
