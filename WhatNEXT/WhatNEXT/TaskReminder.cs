@@ -6,7 +6,9 @@ using System.Threading;
 
 namespace WhatNEXT
 {
-    public class TaskReminder
+   
+
+    public class TaskReminder : ITaskReminder
     {
 
         public TaskReminder()
@@ -25,7 +27,7 @@ namespace WhatNEXT
             Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
         }
 
-        public static TaskReminder GetInstance()
+        public static ITaskReminder GetInstance()
         {
             return WhatNextFacade.GetInstance().TaskReminder();
         }

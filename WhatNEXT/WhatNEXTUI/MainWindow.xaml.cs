@@ -35,6 +35,8 @@ namespace WhatNEXTUI
                     MessageBox.Show("Task Added." + textBoxTaskDetails.Text);
                     this.WindowState = WindowState.Minimized;
                     TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
+
+                    
                 }
                 else
                 {

@@ -14,7 +14,7 @@ namespace WhatNEXT
         private WhatNextFacade()
         {
             kernel = new StandardKernel();
-            kernel.Bind<TaskReminder>().ToSelf().InSingletonScope();//TaskEventGenerator
+            kernel.Bind<ITaskReminder>().To<TaskReminder>().InSingletonScope();//TaskEventGenerator
             kernel.Bind<ITaskList>().To<TaskEventGenerator>().InSingletonScope();//TaskEventGenerator
             kernel.Bind<ITaskList>().To<SimpleTaskList>().WhenInjectedInto<TaskEventGenerator>();
             kernel.Bind<ITaskParser>().To<TaskTextParser>();
@@ -33,9 +33,9 @@ namespace WhatNEXT
         {
             return kernel.Get<ITaskParser>();
         }
-        public TaskReminder TaskReminder()
+        public ITaskReminder TaskReminder()
         {
-            return kernel.Get<TaskReminder>();
+            return kernel.Get<ITaskReminder>();
         }
         public ITaskListWithEvents CreateTaskListWithEvents()
         {
