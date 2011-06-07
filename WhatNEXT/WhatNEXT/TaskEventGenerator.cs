@@ -61,7 +61,7 @@ namespace WhatNEXT
 
         //public static void Main()
         //{
-        //    ITaskList t = TaskListFactory.GetInstance().CreateList();
+        //    ITaskList t = WhatNextFacade.GetInstance().CreateList();
 
         //    ConsoleTaskEventNotifier.TaskEventNotifier(t);
 

@@ -2,5 +2,5 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Enter Task Details" Height="72" Width="583" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Activated="Window_Activated" GotFocus="Window_GotFocus" StateChanged="Window_StateChanged">
-    <TextBox Height="32" Name="textBoxTaskDetails" Width="556"   PreviewKeyUp="textBoxTaskDetails_PreviewKeyUp" />
+    <TextBox Height="32" Name="textBoxTaskDetails" Width="556"   PreviewKeyUp="textBoxTaskDetails_PreviewKeyUp" Text="test after 20s" />
 </Window>

@@ -6,39 +6,23 @@ using Ninject;
 
 namespace WhatNEXT
 {
-    public class TaskListFactory
+    public class WhatNextFacade
     {
-        private static TaskListFactory tasklistFactory = null; //new TaskListFactory();
-        private static IKernel kernel;
+        private static WhatNextFacade facade = new WhatNextFacade();
+        private readonly IKernel kernel;
 
-        public TaskListFactory()
-        {
-
-        }
-        private static void BootStrap()
+        private WhatNextFacade()
         {
             kernel = new StandardKernel();
-
+            kernel.Bind<TaskReminder>().ToSelf().InSingletonScope();//TaskEventGenerator
             kernel.Bind<ITaskList>().To<TaskEventGenerator>().InSingletonScope();//TaskEventGenerator
-            //kernel.Bind<ITaskListWithEvents>().To<TaskEventGenerator>();
             kernel.Bind<ITaskList>().To<SimpleTaskList>().WhenInjectedInto<TaskEventGenerator>();
-
             kernel.Bind<ITaskParser>().To<TaskTextParser>();
-
-            //kernel.Bind<TaskListFactory>().ToSelf();
-
-            tasklistFactory = kernel.Get<TaskListFactory>();
         }
 
-        public static TaskListFactory GetInstance()
+        public static WhatNextFacade GetInstance()
         {
-
-            if (tasklistFactory == null)
-            {
-                BootStrap();
-            }
-
-            return tasklistFactory;
+            return facade;
 
         }
         public ITaskList CreateList()
@@ -49,6 +33,10 @@ namespace WhatNEXT
         {
             return kernel.Get<ITaskParser>();
         }
+        public TaskReminder TaskReminder()
+        {
+            return kernel.Get<TaskReminder>();
+        }
         public ITaskListWithEvents CreateTaskListWithEvents()
         {
             return kernel.Get<ITaskListWithEvents>();
@@ -56,8 +44,8 @@ namespace WhatNEXT
 
         //public static void Main()
         //{
-        //    Console.WriteLine(TaskListFactory.GetInstance().CreateList().GetHashCode());
-        //    Console.WriteLine(TaskListFactory.GetInstance().CreateList().GetHashCode());
+        //    Console.WriteLine(WhatNextFacade.GetInstance().CreateList().GetHashCode());
+        //    Console.WriteLine(WhatNextFacade.GetInstance().CreateList().GetHashCode());
         //}
 
 

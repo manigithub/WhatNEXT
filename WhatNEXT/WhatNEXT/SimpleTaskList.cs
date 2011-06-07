@@ -25,14 +25,11 @@ namespace WhatNEXT
 
         public void AddTask(TaskItem taskItem)
         {
-            
-
             if (taskItem == null || null != FindTaskByID(taskItem.ID))
             {
                 throw new ApplicationException("");
             }
             TaskItems.Add(taskItem);
-
         }
         public void UpdateTask(TaskItem taskItemUpdated)
         {

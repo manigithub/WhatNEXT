@@ -39,7 +39,7 @@ namespace WhatNEXT
         }
         private TaskScheduler()
         {
-        //    ITaskList list = TaskListFactory.GetInstance().CreateList();
+        //    ITaskList list = WhatNextFacade.GetInstance().CreateList();
 
         //    ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(TaskScheduler_Add);
 
@@ -55,7 +55,7 @@ namespace WhatNEXT
         }
         public void ScheduleDummyTask()
         {
-            ITaskList list = TaskListFactory.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateList();
 
             ((ITaskListWithEvents)list).Add +=
                                             delegate(object sender, TaskAddEventArgs e)

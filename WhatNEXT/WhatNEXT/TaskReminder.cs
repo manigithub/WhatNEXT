@@ -6,22 +6,28 @@ using System.Threading;
 
 namespace WhatNEXT
 {
-    public static class TaskReminderUtility
+    public class TaskReminder
     {
-        public static void RemindTask(string taskDetails)
+
+        public TaskReminder()
         {
-            ITaskList list = TaskListFactory.GetInstance().CreateList();
+            ITaskList list = WhatNextFacade.GetInstance().CreateList();
             TaskScheduler taskScheduler = TaskScheduler.GetTaskScheduler();
             ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(taskScheduler.TaskScheduler_Add);
-            CommandInterpreter commandInterpreter = new CommandInterpreter();
             ScheduledTasksLogger tasksLogger = new ScheduledTasksLogger();
             taskScheduler.Schedule += new TaskSchedulerEventHandler(tasksLogger.taskScheduler_Schedule);
-            taskScheduler.Schedule += new TaskSchedulerEventHandler(commandInterpreter.taskScheduler_Schedule);
-            ITaskParser taskParser = TaskListFactory.GetInstance().CreateTaskParser();
-            TaskItem taskItem = taskParser.Parse(taskDetails);
+        }
 
-            list.AddTask(taskItem);
+        public void RemindTask(string taskDetails)
+        {
+            TaskItem taskItem = WhatNextFacade.GetInstance().CreateTaskParser().Parse(taskDetails);
+            WhatNextFacade.GetInstance().CreateList().AddTask(taskItem);
             Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
+        }
+
+        public static TaskReminder GetInstance()
+        {
+            return WhatNextFacade.GetInstance().TaskReminder();
         }
     }
 }

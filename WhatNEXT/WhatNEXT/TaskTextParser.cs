@@ -14,7 +14,7 @@ namespace WhatNEXT
 
         public TaskItem Parse(string taskDetails)
         {
-            taskItem.ID = 1001;
+            taskItem.ID = DateTime.Now.ToFileTimeUtc();
 
             int indexTaskSplitter = taskDetails.IndexOf("after");
 

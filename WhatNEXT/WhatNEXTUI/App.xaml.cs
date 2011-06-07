@@ -18,16 +18,16 @@ namespace WhatNEXTUI
         [STAThread]
         public static void Main()
         {
-            if (SingleInstance<App>.InitializeAsFirstInstance(Unique))
-            {
+            //if (SingleInstance<App>.InitializeAsFirstInstance(Unique))
+            //{
 
                 WhatNEXTUI.App app = new WhatNEXTUI.App();
                 app.InitializeComponent();
                 app.Run();
              
                 // Allow single instance code to perform cleanup operations
-                SingleInstance<App>.Cleanup();
-            }
+                //SingleInstance<App>.Cleanup();
+            //}
         }
 
         public bool SignalExternalCommandLineArgs(IList<string> args)

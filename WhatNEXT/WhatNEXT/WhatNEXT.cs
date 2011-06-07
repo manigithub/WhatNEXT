@@ -13,7 +13,7 @@
 
 //        public static void Main()
 //        {
-//            ITaskList t = TaskListFactory.GetInstance().CreateList();
+//            ITaskList t = WhatNextFacade.GetInstance().CreateList();
 
 //            ConsoleTaskEventNotifier.TaskEventNotifier(t);
 
@@ -31,9 +31,9 @@
 //            //kernel.Bind<ITaskListWithEvents>().To<TaskEventGenerator>();
 //            kernel.Bind<ITaskList>().To<SimpleTaskList>().WhenInjectedInto<TaskEventGenerator>();
 
-//            //kernel.Bind<TaskListFactory>().ToSelf();
+//            //kernel.Bind<WhatNextFacade>().ToSelf();
 
-//            tasklistFactory = kernel.Get<TaskListFactory>();
+//            tasklistFactory = kernel.Get<WhatNextFacade>();
 
 //        }
 //    }
