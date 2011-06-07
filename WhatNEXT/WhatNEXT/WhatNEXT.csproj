@@ -56,7 +56,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="ITaskListWithEvents.cs" />
     <Compile Include="ITaskParser.cs" />
-    <Compile Include="LogNotifier.cs" />
+    <Compile Include="ScheduledTasksLogger.cs" />
     <Compile Include="TaskAddEventArgs.cs" />
     <Compile Include="TaskDelegates.cs" />
     <Compile Include="TaskEventGenerator.cs" />

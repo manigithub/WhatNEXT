@@ -21,7 +21,7 @@ namespace WhatNEXT
             if(indexTaskSplitter != -1)
             {
                 taskItem.Details = taskDetails.Substring(0, indexTaskSplitter).Trim();
-                taskItem.TimeReminder = Convert.ToInt32(taskDetails.Substring(indexTaskSplitter + "after".Length).Trim().TrimEnd('m'));
+                taskItem.TimeReminder = Convert.ToInt32(taskDetails.Substring(indexTaskSplitter + "after".Length).Trim().TrimEnd('s'))*1000;
                 
             }
             return taskItem;

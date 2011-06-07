@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using WhatNEXT;
 
 
 namespace WhatNEXTUI
@@ -31,8 +32,9 @@ namespace WhatNEXTUI
             {
                 if (textBoxTaskDetails.Text.Trim().Length > 0)
                 {
-                    MessageBox.Show("Task Added.");
+                    MessageBox.Show("Task Added." + textBoxTaskDetails.Text);
                     this.WindowState = WindowState.Minimized;
+                    TaskReminderUtility.RemindTask(this.textBoxTaskDetails.Text.Trim());
                 }
                 else
                 {
@@ -44,12 +46,12 @@ namespace WhatNEXTUI
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            this.textBoxTaskDetails.Text = string.Empty;
+            //this.textBoxTaskDetails.Text = string.Empty;
         }
 
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.textBoxTaskDetails.Text = string.Empty;
+            //this.textBoxTaskDetails.Text = string.Empty;
         }
 
         private void Window_StateChanged(object sender, EventArgs e)

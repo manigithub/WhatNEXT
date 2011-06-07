@@ -45,11 +45,11 @@ namespace WhatNEXT
         }
         void TaskScheduler_Add(object sender, TaskAddEventArgs e)
         {
-             ScheduleTask(taskItem)
+            ScheduleTask(e.Task);
         }
         public void ScheduleTask(TaskItem taskItem)
         {
-            Timer taskTimer = new Timer(new TimerCallback(OnSchedule),
+            var taskTimer = new Timer(new TimerCallback(OnSchedule),
                                         new TaskScheduleEventArgs(taskItem), taskItem.TimeReminder, Timeout.Infinite);
         }
         public void ScheduleDummyTask()

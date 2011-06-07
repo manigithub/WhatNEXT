@@ -10,19 +10,21 @@ namespace WhatNEXT
     {
         public static void RemindTask(string taskDetails)
         {
-            ITaskParser taskParser = TaskListFactory.GetInstance().CreateTaskParser();
-            TaskItem taskItem = taskParser.Parse("taskDetails");
-
             ITaskList list = TaskListFactory.GetInstance().CreateList();
+            TaskScheduler taskScheduler = TaskScheduler.GetTaskScheduler();
+            CommandInterpreter commandInterpreter = new CommandInterpreter(taskScheduler);
+            ScheduledTasksLogger tasksLogger = new ScheduledTasksLogger(taskScheduler);
+            
+
+            ITaskParser taskParser = TaskListFactory.GetInstance().CreateTaskParser();
+            TaskItem taskItem = taskParser.Parse(taskDetails);
+
+            
             list.AddTask(taskItem);
 
-            TaskScheduler taskScheduler = new TaskScheduler();
-            CommandInterpreter commandInterpreter = new CommandInterpreter(taskScheduler);
             
+
             Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
-            Thread.CurrentThread.Join(5000);
-
-
             
         }
     }

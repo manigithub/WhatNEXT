@@ -9,12 +9,10 @@ namespace WhatNEXT
     {
         private ITaskList taskList;//why private - outside world should not know. proxy attendance cannot given public
         public event AddTaskEventHandler Add;
-        
 
         public TaskEventGenerator(ITaskList taskList)
         {
             this.taskList = taskList;
-
             Console.WriteLine("from TaskEventGenerator added");
         }
         // Invoke the Changed event; called whenever list changes
@@ -24,7 +22,6 @@ namespace WhatNEXT
             {
                 Add(this, e);
             }
-
         }
         public void AddTask(TaskItem taskItem)
         {

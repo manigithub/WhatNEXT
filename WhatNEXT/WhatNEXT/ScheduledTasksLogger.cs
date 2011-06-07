@@ -25,19 +25,17 @@ namespace WhatNEXT
 
         private void WriteTaskToFile(TaskItem taskItem)
         {
-            string mydocpath =
-           Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            string mydocpath = @"C:\Users\manikandan\Desktop";
+           //Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             var sb = new StringBuilder();
-
-
-            sb.AppendLine(System.DateTime.Now.ToShortTimeString());
             sb.AppendLine("= = = = = =");
+            sb.AppendLine(System.DateTime.Now.ToShortTimeString());
             sb.Append("Task ID:" + taskItem.ID);
             sb.Append("Task Details:" + taskItem.Details);
             sb.Append("Task Schduled:" + taskItem.TimeReminder);
             sb.AppendLine();
-            sb.AppendLine();
+            sb.AppendLine("= = = = = =");
 
             using (var outfile =
                 new StreamWriter(mydocpath + @"\TaskList.txt", true))
