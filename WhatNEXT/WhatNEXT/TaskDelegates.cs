@@ -6,4 +6,6 @@ using System.Text;
 namespace WhatNEXT
 {
     public delegate void AddTaskEventHandler(object sender, TaskAddEventArgs e);
+    public delegate void TaskSchedulerEventHandler(object sender, TaskScheduleEventArgs e);
+    
 }

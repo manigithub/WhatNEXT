@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleTaskListTests.cs" />
     <Compile Include="TaskEventGeneratorTests.cs" />
+    <None Include="TaskSchedulerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\WhatNEXT\WhatNEXT\WhatNEXT.csproj">

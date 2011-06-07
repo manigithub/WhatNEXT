@@ -7,7 +7,7 @@ namespace WhatNEXT
 {
     public static class ConsoleTaskEventNotifier
     {
-        private static ITaskList taskListWithEvents;
+        
 
         public static void TaskEventNotifier(ITaskList taskList)
         {
@@ -18,7 +18,7 @@ namespace WhatNEXT
         }
         static void ConsoleTaskEventNotifier_Add(object sender, TaskAddEventArgs e)
         {
-            Console.WriteLine("Task id added: {0}", e.TaskID);
+            Console.WriteLine("Task id added: {0}", e.Task.ID);
         }
 
        

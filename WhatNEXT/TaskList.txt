@@ -1,0 +1,3 @@
+1. Justify every Setter
+
+2. Make most of the fields as readonly/const/sealed

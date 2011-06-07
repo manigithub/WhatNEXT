@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>WhatNEXT.TaskEventGenerator</StartupObject>
+    <StartupObject>WhatNEXT.TaskScheduler</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ninject, Version=2.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -51,18 +51,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandInterpreter.cs" />
     <Compile Include="ConsoleTaskEventNotifier.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="ITaskListWithEvents.cs" />
+    <Compile Include="ITaskParser.cs" />
+    <Compile Include="LogNotifier.cs" />
     <Compile Include="TaskAddEventArgs.cs" />
     <Compile Include="TaskDelegates.cs" />
     <Compile Include="TaskEventGenerator.cs" />
+    <Compile Include="TaskReminderUtility.cs" />
+    <Compile Include="TaskScheduleEventArgs.cs" />
+    <Compile Include="TaskScheduler.cs" />
+    <Compile Include="TaskTextParser.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="ITaskList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleTaskList.cs" />
     <Compile Include="TaskItem.cs" />
     <Compile Include="TaskListFactory.cs" />
+    <Compile Include="WhatNEXT.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NinjectBinaries\extensions\CommonServiceLocator.NinjectAdapter.dll" />

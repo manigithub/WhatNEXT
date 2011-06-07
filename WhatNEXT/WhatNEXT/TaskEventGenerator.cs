@@ -29,7 +29,7 @@ namespace WhatNEXT
         public void AddTask(TaskItem taskItem)
         {
             taskList.AddTask(taskItem);
-            OnAdd(new TaskAddEventArgs(taskItem.ID));
+            OnAdd(new TaskAddEventArgs(taskItem));
         }
         public void UpdateTask(TaskItem taskItem)
         {
@@ -62,16 +62,16 @@ namespace WhatNEXT
             throw new NotImplementedException();
         }
 
-        public static void Main()
-        {
-            ITaskList t = TaskListFactory.GetInstance().CreateList();
+        //public static void Main()
+        //{
+        //    ITaskList t = TaskListFactory.GetInstance().CreateList();
 
-            ConsoleTaskEventNotifier.TaskEventNotifier(t);
+        //    ConsoleTaskEventNotifier.TaskEventNotifier(t);
 
-            t.AddTask(new TaskItem() { ID = 1 });
+        //    t.AddTask(new TaskItem() { ID = 1 });
 
-            System.Threading.Thread.Sleep(10000);
+        //    System.Threading.Thread.Sleep(10000);
 
-        }
+        //}
     }
 }

@@ -1,0 +1,30 @@
+Developer's LIFE LESSONS:
+======================================
+1. Read Lot of code 
+
+2. Start with NCrawler. download and understand the code. keep doing this till you r developer.
+
+3. Should be strong in core of the Language and the Framework:
+
+	1. System namespace - all core classes
+	2. I/O
+	3. Threading
+	4. Delegates & events
+	5. Read the source code code Generic List<T> implementation and internally other implementations.
+		
+4. Daily write at least write 250 lines of code & read 250 lines of code. keep doing this till u r developer
+
+5. Read a Dynamic Programming like Ruby/Iron PYthon
+
+6. Explore the code of good open source project. try to understand and keep reading.
+
+7. Code Reading is very essential. If you don't understand, ask others.
+
+
+NOTE:
+
+1. Success requires sacrifice and takes time.  So enjoy the process and be happy with the process.
+
+2. Never get frustrated. Be happy and keep improving.
+
+3. consistent and be happy. put time and enjoy yourself.

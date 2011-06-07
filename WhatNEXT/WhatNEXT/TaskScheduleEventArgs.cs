@@ -5,10 +5,11 @@ using System.Text;
 
 namespace WhatNEXT
 {
-    public class TaskAddEventArgs:EventArgs
+    public class TaskScheduleEventArgs : EventArgs
     {
-        private readonly TaskItem task; 
-        public TaskAddEventArgs(TaskItem task)
+        private readonly TaskItem task;
+
+        public TaskScheduleEventArgs(TaskItem task)
         {
             this.task = task;
         }
@@ -16,7 +17,7 @@ namespace WhatNEXT
         public TaskItem Task
         {
             get { return task; }
-            
+
         }
     }
 }

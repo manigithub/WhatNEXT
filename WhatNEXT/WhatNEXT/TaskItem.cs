@@ -11,6 +11,7 @@ namespace WhatNEXT
         public Int64 ID { get; set; }
         public string Details { get; set; }
         public string IpAddress { get; set; }
+        public int TimeReminder { get; set; }
 
         public override bool Equals(object obj)
         {
