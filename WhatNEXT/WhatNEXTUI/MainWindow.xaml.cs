@@ -21,6 +21,7 @@ namespace WhatNEXTUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TaskItem taskItem;
 
         public MainWindow()
         {
@@ -36,7 +37,7 @@ namespace WhatNEXTUI
                     this.WindowState = WindowState.Minimized;
                     TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
 
-                    
+
                 }
                 else
                 {
@@ -58,7 +59,26 @@ namespace WhatNEXTUI
 
         private void Window_StateChanged(object sender, EventArgs e)
         {
-            
+
+        }
+        public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
+        {
+            taskItem = e.Task;
+            btnSnooze.IsEnabled = true;
+            textBoxTaskDetails.Text = taskItem.Details;
+            this.WindowState = WindowState.Normal;
+        }
+
+        private void btnSnooze_Click(object sender, RoutedEventArgs e)
+        {
+            TaskReminder.GetInstance().RemindTask(this.taskItem);
+        }
+
+        private void Window_Load(object sender, RoutedEventArgs e)
+        {
+
+            TaskReminder.GetInstance().CallMeBack(taskScheduler_Schedule);
+
         }
     }
 }

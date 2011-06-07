@@ -44,7 +44,7 @@ namespace WhatNEXT
         //    ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(TaskScheduler_Add);
 
         }
-        public void TaskScheduler_Add(object sender, TaskAddEventArgs e)
+        public void TaskScheduler_Schedule(object sender, TaskAddEventArgs e)
         {
             ScheduleTask(e.Task);
         }

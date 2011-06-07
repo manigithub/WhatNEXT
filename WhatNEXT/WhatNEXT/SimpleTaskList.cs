@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace WhatNEXT
 {
-    public class SimpleTaskList : ITaskList     
+    public class SimpleTaskList : ITaskList
     {
         private List<TaskItem> taskItems = new List<TaskItem>();
 
@@ -25,11 +25,15 @@ namespace WhatNEXT
 
         public void AddTask(TaskItem taskItem)
         {
-            if (taskItem == null || null != FindTaskByID(taskItem.ID))
+            if (null != FindTaskByID(taskItem.ID))
             {
-                throw new ApplicationException("");
+                UpdateTask(taskItem);
             }
-            TaskItems.Add(taskItem);
+            else
+            {
+                TaskItems.Add(taskItem);
+            }
+
         }
         public void UpdateTask(TaskItem taskItemUpdated)
         {

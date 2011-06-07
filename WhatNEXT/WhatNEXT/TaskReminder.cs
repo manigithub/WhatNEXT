@@ -14,15 +14,24 @@ namespace WhatNEXT
         public TaskReminder()
         {
             ITaskList list = WhatNextFacade.GetInstance().CreateTaskList();
-            TaskScheduler taskScheduler = TaskScheduler.GetTaskScheduler();
-            ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(taskScheduler.TaskScheduler_Add);
+            ((ITaskListWithEvents)list).Add += new AddTaskEventHandler(TaskScheduler.GetTaskScheduler().TaskScheduler_Schedule);
             ScheduledTasksLogger tasksLogger = new ScheduledTasksLogger();
-            taskScheduler.Schedule += new TaskSchedulerEventHandler(tasksLogger.taskScheduler_Schedule);
+            CallMeBack(tasksLogger.taskScheduler_Schedule);
+        }
+
+        public void CallMeBack(RemindMe CallBackMethod)
+        {
+            TaskScheduler.GetTaskScheduler().Schedule += new TaskSchedulerEventHandler(CallBackMethod);
         }
 
         public void RemindTask(string taskDetails)
         {
             TaskItem taskItem = WhatNextFacade.GetInstance().CreateTaskParser().Parse(taskDetails);
+            RemindTask(taskItem);
+        }
+
+        public void RemindTask(TaskItem taskItem)
+        {
             WhatNextFacade.GetInstance().CreateTaskList().AddTask(taskItem);
             Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
         }

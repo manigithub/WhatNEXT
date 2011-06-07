@@ -8,5 +8,7 @@ namespace WhatNEXT
     public interface ITaskReminder
     {
         void RemindTask(string taskDetails);
+        void RemindTask(TaskItem taskItem);
+        void CallMeBack(RemindMe CallBackMethod);
     }
 }
