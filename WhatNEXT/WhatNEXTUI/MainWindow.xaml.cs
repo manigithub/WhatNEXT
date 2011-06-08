@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using System.Windows.Threading;
 using WhatNEXT;
 
 
@@ -64,11 +65,22 @@ namespace WhatNEXTUI
         public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
         {
             taskItem = e.Task;
+            //the calling thread cannot access this object because a different thread owns it.
+            //btnSnooze.IsEnabled = true;
+
+            //textBoxTaskDetails.Text = taskItem.Details;
+            //this.WindowState = WindowState.Normal;
+
+            // Place delegate on the Dispatcher.
+            this.Dispatcher.Invoke(DispatcherPriority.Normal, new UpdateUIControls(UpdateUI));
+        }
+
+        private void UpdateUI()
+        {
             btnSnooze.IsEnabled = true;
             textBoxTaskDetails.Text = taskItem.Details;
             this.WindowState = WindowState.Normal;
         }
-
         private void btnSnooze_Click(object sender, RoutedEventArgs e)
         {
             TaskReminder.GetInstance().RemindTask(this.taskItem);
