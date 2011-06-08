@@ -88,9 +88,7 @@ namespace WhatNEXTUI
 
         private void Window_Load(object sender, RoutedEventArgs e)
         {
-
             TaskReminder.GetInstance().CallMeBack(taskScheduler_Schedule);
-
         }
     }
 }
