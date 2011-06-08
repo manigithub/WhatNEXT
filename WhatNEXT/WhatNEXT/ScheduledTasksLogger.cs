@@ -23,7 +23,7 @@ namespace WhatNEXT
 
         private void WriteTaskToFile(TaskItem taskItem)
         {
-            string mydocpath = @"C:\";
+            string mydocpath = @"C:\Users\manikandan\Desktop";//@"C:\";
            //Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             var sb = new StringBuilder();

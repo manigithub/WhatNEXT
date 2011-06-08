@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,7 +23,7 @@ namespace WhatNEXTUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TaskItem taskItem;
+        private List<TaskItem> taskItemsScheduled = new List<TaskItem>();
 
         public MainWindow()
         {
@@ -64,7 +65,7 @@ namespace WhatNEXTUI
         }
         public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
         {
-            taskItem = e.Task;
+            taskItemsScheduled.Add(e.Task);
             //the calling thread cannot access this object because a different thread owns it.
             //btnSnooze.IsEnabled = true;
 
@@ -77,18 +78,47 @@ namespace WhatNEXTUI
 
         private void UpdateUI()
         {
-            btnSnooze.IsEnabled = true;
-            textBoxTaskDetails.Text = taskItem.Details;
-            this.WindowState = WindowState.Normal;
+            bool isFirstScheduledItem = true;
+         
+                //if (isFirstScheduledItem == false)
+                //{
+                //    this.IsEnabled = false;
+                //    Thread.Sleep(2000);
+                //    this.IsEnabled = true;
+                //}
+                btnSnooze.IsEnabled = true;
+                textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
+                this.WindowState = WindowState.Normal;
+                //isFirstScheduledItem = false;
+           
         }
+
         private void btnSnooze_Click(object sender, RoutedEventArgs e)
-        {
-            TaskReminder.GetInstance().RemindTask(this.taskItem);
+        {   
+            TaskReminder.GetInstance().RemindTask(this.taskItemsScheduled[0]);
+            this.taskItemsScheduled.RemoveAt(0);
+            TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
+            if (taskItemsScheduled.Count > 0)
+            {
+                btnSnooze.IsEnabled = true;
+                textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
         {
             TaskReminder.GetInstance().CallMeBack(taskScheduler_Schedule);
+        }
+
+        private void btnCompleted_Click(object sender, RoutedEventArgs e)
+        {
+            this.taskItemsScheduled.RemoveAt(0);
         }
     }
 }
