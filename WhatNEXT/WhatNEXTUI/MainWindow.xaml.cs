@@ -27,6 +27,8 @@ namespace WhatNEXTUI
         //Put it as thread safe collection
         private ConcurrentQueue<TaskItem> taskItemsScheduled = new ConcurrentQueue<TaskItem>();
         private ConcurrentQueue<TaskItem> taskItemsCompleted = new ConcurrentQueue<TaskItem>();
+        private Boolean isDispatcherRequired = true;
+        static object locker = new object();
 
         public MainWindow()
         {
@@ -75,39 +77,68 @@ namespace WhatNEXTUI
             //textBoxTaskDetails.Text = taskItem.Details;
             //this.WindowState = WindowState.Normal;
 
-            // Place delegate on the Dispatcher.
-            this.Dispatcher.Invoke(DispatcherPriority.Normal, new UpdateUIControls(UpdateUI));
+            DelegateUIUpdateToDispatcher();
+        }
+        private void DelegateUIUpdateToDispatcher()
+        {
+            lock (locker)
+            {
+                if (isDispatcherRequired)
+                {
+                    Dispatcher.Invoke(DispatcherPriority.Normal, new UpdateUIControls(UpdateUI));
+                }
+                isDispatcherRequired = false;
+            }
+
+           
         }
 
         private void UpdateUI()
         {
             TaskItem taskItem = null;
-            if (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0)
+            btnSnooze.IsEnabled = false;
+            btnCompleted.IsEnabled = false;
+
+            while (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0)
             {
                 taskItemsCompleted.Enqueue(taskItem);
                 btnSnooze.IsEnabled = true;
                 btnCompleted.IsEnabled = true;
+                textBoxTaskDetails.IsEnabled = true;
                 textBoxTaskDetails.Text = taskItem.Details;
-                this.WindowState = WindowState.Normal;
-                
+                WindowState = WindowState.Normal;
+                taskItem = null;
             }
         }
 
         private void btnSnooze_Click(object sender, RoutedEventArgs e)
         {
-            
-            TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
-            //if (taskItemsScheduled.Count > 0)
-            //{
-            //    btnSnooze.IsEnabled = true;
-            //    textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
-            //    this.WindowState = WindowState.Normal;
-            //}
-            //else
-            //{
-            //    this.WindowState = WindowState.Minimized;
-            //}
-            this.WindowState = WindowState.Minimized;
+            TaskReminder.GetInstance().RemindTask(textBoxTaskDetails.Text.Trim());
+
+            lock (locker)
+            {
+                if (taskItemsScheduled.IsEmpty)
+                {
+                    WindowState = WindowState.Minimized;
+                    isDispatcherRequired = true;
+                }
+                else
+                {
+                    textBoxTaskDetails.Text = "Loading next task....wait...";
+                    DisableUIControls();
+                    //MessageBox.Show("NExt Task comes here");
+                    UpdateUI();
+                }
+            }
+          
+          
+        }
+
+        private void DisableUIControls()
+        {
+            textBoxTaskDetails.IsEnabled = false;
+            btnSnooze.IsEnabled = false;
+            btnCompleted.IsEnabled = false;
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
@@ -118,11 +149,11 @@ namespace WhatNEXTUI
         private void btnCompleted_Click(object sender, RoutedEventArgs e)
         {
             TaskItem taskItem = null;
-            if(taskItemsCompleted.TryDequeue(out taskItem))
+            if (taskItemsCompleted.TryDequeue(out taskItem))
             {
                 //Do  completed tasks logging
-                this.textBoxTaskDetails.Text = string.Empty;
-                this.WindowState = WindowState.Minimized;
+                textBoxTaskDetails.Text = string.Empty;
+                WindowState = WindowState.Minimized;
             }
             else
             {
