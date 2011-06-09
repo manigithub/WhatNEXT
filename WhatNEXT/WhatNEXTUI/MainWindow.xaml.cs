@@ -25,7 +25,7 @@ namespace WhatNEXTUI
     public partial class MainWindow : Window
     {
         //Put it as thread safe collection
-        private ConcurrentBag<TaskItem> taskItemsScheduled = new ConcurrentBag<TaskItem>();
+        private ConcurrentQueue<TaskItem> taskItemsScheduled = new ConcurrentQueue<TaskItem>();
         private ConcurrentQueue<TaskItem> taskItemsCompleted = new ConcurrentQueue<TaskItem>();
 
         public MainWindow()
@@ -68,7 +68,7 @@ namespace WhatNEXTUI
         }
         public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
         {
-            taskItemsScheduled.Add(e.Task);
+            taskItemsScheduled.Enqueue(e.Task);
             //the calling thread cannot access this object because a different thread owns it.
             //btnSnooze.IsEnabled = true;
 
@@ -82,7 +82,7 @@ namespace WhatNEXTUI
         private void UpdateUI()
         {
             TaskItem taskItem = null;
-            if (taskItemsScheduled.TryTake(out taskItem) && taskItem != null && taskItem.ID > 0)
+            if (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0)
             {
                 taskItemsCompleted.Enqueue(taskItem);
                 btnSnooze.IsEnabled = true;
