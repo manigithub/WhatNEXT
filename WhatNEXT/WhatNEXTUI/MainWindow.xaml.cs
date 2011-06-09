@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Text;
 using System.Threading;
 using System.Windows;
@@ -23,7 +24,9 @@ namespace WhatNEXTUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<TaskItem> taskItemsScheduled = new List<TaskItem>();
+        //Put it as thread safe collection
+        private ConcurrentBag<TaskItem> taskItemsScheduled = new ConcurrentBag<TaskItem>();
+        private ConcurrentQueue<TaskItem> taskItemsCompleted = new ConcurrentQueue<TaskItem>();
 
         public MainWindow()
         {
@@ -78,37 +81,33 @@ namespace WhatNEXTUI
 
         private void UpdateUI()
         {
-            bool isFirstScheduledItem = true;
-         
-                //if (isFirstScheduledItem == false)
-                //{
-                //    this.IsEnabled = false;
-                //    Thread.Sleep(2000);
-                //    this.IsEnabled = true;
-                //}
+            TaskItem taskItem = null;
+            if (taskItemsScheduled.TryTake(out taskItem) && taskItem != null && taskItem.ID > 0)
+            {
+                taskItemsCompleted.Enqueue(taskItem);
                 btnSnooze.IsEnabled = true;
-                textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
+                btnCompleted.IsEnabled = true;
+                textBoxTaskDetails.Text = taskItem.Details;
                 this.WindowState = WindowState.Normal;
-                //isFirstScheduledItem = false;
-           
+                
+            }
         }
 
         private void btnSnooze_Click(object sender, RoutedEventArgs e)
-        {   
-            TaskReminder.GetInstance().RemindTask(this.taskItemsScheduled[0]);
-            this.taskItemsScheduled.RemoveAt(0);
+        {
+            
             TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
-            if (taskItemsScheduled.Count > 0)
-            {
-                btnSnooze.IsEnabled = true;
-                textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
-                this.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = WindowState.Minimized;
-            }
-
+            //if (taskItemsScheduled.Count > 0)
+            //{
+            //    btnSnooze.IsEnabled = true;
+            //    textBoxTaskDetails.Text = taskItemsScheduled[0].Details;
+            //    this.WindowState = WindowState.Normal;
+            //}
+            //else
+            //{
+            //    this.WindowState = WindowState.Minimized;
+            //}
+            this.WindowState = WindowState.Minimized;
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
@@ -118,7 +117,19 @@ namespace WhatNEXTUI
 
         private void btnCompleted_Click(object sender, RoutedEventArgs e)
         {
-            this.taskItemsScheduled.RemoveAt(0);
+            TaskItem taskItem = null;
+            if(taskItemsCompleted.TryDequeue(out taskItem))
+            {
+                //Do  completed tasks logging
+                this.textBoxTaskDetails.Text = string.Empty;
+                this.WindowState = WindowState.Minimized;
+            }
+            else
+            {
+
+                MessageBox.Show("could not remove task item after completion");
+            }
+
         }
     }
 }
