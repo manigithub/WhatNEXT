@@ -1,18 +1,11 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Text;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Drawing;
 using System.Windows.Threading;
 using WhatNEXT;
 
@@ -27,7 +20,8 @@ namespace WhatNEXTUI
         //Put it as thread safe collection
         private ConcurrentQueue<TaskItem> taskItemsScheduled = new ConcurrentQueue<TaskItem>();
         private ConcurrentQueue<TaskItem> taskItemsCompleted = new ConcurrentQueue<TaskItem>();
-        private Boolean isDispatcherRequired = true;
+        private WindowState currentWindowState = System.Windows.WindowState.Normal;
+        private ConcurrentQueue<long> currentTaskIdShown = new ConcurrentQueue<long>();
         static object locker = new object();
 
         public MainWindow()
@@ -42,6 +36,7 @@ namespace WhatNEXTUI
                 {
                     MessageBox.Show("Task Added." + textBoxTaskDetails.Text);
                     this.WindowState = WindowState.Minimized;
+                    currentWindowState = WindowState.Minimized;
                     TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
 
 
@@ -71,43 +66,39 @@ namespace WhatNEXTUI
         public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
         {
             taskItemsScheduled.Enqueue(e.Task);
+
             //the calling thread cannot access this object because a different thread owns it.
             //btnSnooze.IsEnabled = true;
-
-            //textBoxTaskDetails.Text = taskItem.Details;
-            //this.WindowState = WindowState.Normal;
 
             DelegateUIUpdateToDispatcher();
         }
         private void DelegateUIUpdateToDispatcher()
         {
-            lock (locker)
+            if (currentWindowState == WindowState.Minimized && taskItemsScheduled.Count > 0)
             {
-                if (isDispatcherRequired)
-                {
-                    Dispatcher.Invoke(DispatcherPriority.Normal, new UpdateUIControls(UpdateUI));
-                }
-                isDispatcherRequired = false;
+                MessageBox.Show("Invoked from dispatcher ");
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, new UpdateUIControls(RemindTaskToUser));
             }
-
-           
         }
 
-        private void UpdateUI()
+        private void RemindTaskToUser()
         {
+
             TaskItem taskItem = null;
             btnSnooze.IsEnabled = false;
             btnCompleted.IsEnabled = false;
+            long currentTask = -1;
 
-            while (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0)
+            if (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0 /* && currentTaskIdShown.TryPeek(out currentTask) && currentTask != taskItem.ID*/)
             {
+                
                 taskItemsCompleted.Enqueue(taskItem);
                 btnSnooze.IsEnabled = true;
                 btnCompleted.IsEnabled = true;
                 textBoxTaskDetails.IsEnabled = true;
                 textBoxTaskDetails.Text = taskItem.Details;
                 WindowState = WindowState.Normal;
-                taskItem = null;
+                currentWindowState = WindowState.Normal;
             }
         }
 
@@ -115,23 +106,21 @@ namespace WhatNEXTUI
         {
             TaskReminder.GetInstance().RemindTask(textBoxTaskDetails.Text.Trim());
 
-            lock (locker)
+            if (!taskItemsScheduled.IsEmpty)
             {
-                if (taskItemsScheduled.IsEmpty)
-                {
-                    WindowState = WindowState.Minimized;
-                    isDispatcherRequired = true;
-                }
-                else
-                {
-                    textBoxTaskDetails.Text = "Loading next task....wait...";
-                    DisableUIControls();
-                    //MessageBox.Show("NExt Task comes here");
-                    UpdateUI();
-                }
+                textBoxTaskDetails.Text = "";
+                DisableUIControls();
+                //Thread.Sleep(2000);
+                MessageBox.Show("Loading Next Task...");
+                RemindTaskToUser();
             }
-          
-          
+            else
+            {
+                WindowState = WindowState.Minimized;
+                currentWindowState = WindowState.Minimized;
+                //isDispatcherRequired = true;
+            }
+
         }
 
         private void DisableUIControls()
@@ -152,15 +141,25 @@ namespace WhatNEXTUI
             if (taskItemsCompleted.TryDequeue(out taskItem))
             {
                 //Do  completed tasks logging
-                textBoxTaskDetails.Text = string.Empty;
-                WindowState = WindowState.Minimized;
+                textBoxTaskDetails.Text = "";
+                if (!taskItemsScheduled.IsEmpty)
+                {
+                    DisableUIControls();
+                    //Thread.Sleep(2000)
+                    MessageBox.Show("Loading Next Task...");
+                    RemindTaskToUser();
+                }
+                else
+                {
+                    WindowState = WindowState.Minimized;
+                    currentWindowState = WindowState.Minimized;
+                }
+
             }
             else
             {
-
                 MessageBox.Show("could not remove task item after completion");
             }
-
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.IO;
+using System.Collections.Concurrent;
 
 namespace WhatNEXT
 {
@@ -10,7 +12,10 @@ namespace WhatNEXT
     {
         public event TaskSchedulerEventHandler Schedule;
         private static TaskScheduler taskScheduler;
-        private Timer taskTimer;
+        private ConcurrentQueue<Timer> timerQueue = new ConcurrentQueue<Timer>();
+        private readonly  object locker = new object();
+        //private FileStream fs = File.OpenWrite(@"C:\Users\manikandan\Desktop\TaskSchduler.txt");
+        private TextWriter writer = File.CreateText(@"C:\Users\manikandan\Desktop\TaskSchduler.txt");
 
         public static TaskScheduler GetTaskScheduler()
         {
@@ -34,7 +39,10 @@ namespace WhatNEXT
         {
             if (Schedule != null)
             {
-                Schedule(this, (TaskScheduleEventArgs)e);
+                var temp = Schedule;
+                writer.WriteLine("Invoking Task ID:" + ((TaskScheduleEventArgs)e).Task.ID + " Task Details: " + ((TaskScheduleEventArgs)e).Task.Details);
+                writer.Flush();
+                temp(this, (TaskScheduleEventArgs)e);
             }
         }
         private TaskScheduler()
@@ -46,12 +54,20 @@ namespace WhatNEXT
         }
         public void TaskScheduler_Schedule(object sender, TaskAddEventArgs e)
         {
-            ScheduleTask(e.Task);
+             lock (locker)
+             {
+                 writer.WriteLine("Task ID:" + e.Task.ID + " Task Details: " + e.Task.Details);
+                 writer.Flush();
+                 ScheduleTask(e.Task);
+             }
         }
         private void ScheduleTask(TaskItem taskItem)
         {
-             taskTimer = new Timer(new TimerCallback(OnSchedule),
-                                        new TaskScheduleEventArgs(taskItem), taskItem.TimeReminder, Timeout.Infinite);
+           
+                timerQueue.Enqueue( new Timer(new TimerCallback(OnSchedule),
+                                        new TaskScheduleEventArgs(taskItem), taskItem.TimeReminder!=0?taskItem.TimeReminder:1000000, Timeout.Infinite));
+           
+            
         }
         public void ScheduleDummyTask()
         {

@@ -33,7 +33,7 @@ namespace WhatNEXT
         public void RemindTask(TaskItem taskItem)
         {
             WhatNextFacade.GetInstance().CreateTaskList().AddTask(taskItem);
-            Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
+            //Console.WriteLine("Main Thread id: {0}", Thread.CurrentThread.ManagedThreadId);
         }
 
         public static ITaskReminder GetInstance()
