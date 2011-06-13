@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Enter Task Details" Height="70" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Activated="Window_Activated" GotFocus="Window_GotFocus" StateChanged="Window_StateChanged" Loaded="Window_Load">
     <Grid>
-        <TextBox Name="textBoxTaskDetails" PreviewKeyUp="textBoxTaskDetails_PreviewKeyUp" Loaded="Window_Load" Margin="0,0,168,0" />
+        <TextBox Name="textBoxTaskDetails" PreviewKeyUp="textBoxTaskDetails_PreviewKeyUp" Margin="0,0,168,0" />
         <Button Content="Snooze" Height="23" HorizontalAlignment="Right" Margin="0,2,87,0" Name="btnSnooze" VerticalAlignment="Top" Width="75" Click="btnSnooze_Click" IsEnabled="False" />
         <Button Content="Completed" Height="23" HorizontalAlignment="Right" Margin="0,2,12,0" Name="btnCompleted" VerticalAlignment="Top" Width="69" IsEnabled="False" Click="btnCompleted_Click" />
     </Grid>

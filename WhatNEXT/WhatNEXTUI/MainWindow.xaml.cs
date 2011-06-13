@@ -76,7 +76,7 @@ namespace WhatNEXTUI
         {
             if (currentWindowState == WindowState.Minimized && taskItemsScheduled.Count > 0)
             {
-                MessageBox.Show("Invoked from dispatcher ");
+                //MessageBox.Show("Invoked from dispatcher ");
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, new UpdateUIControls(RemindTaskToUser));
             }
         }
@@ -131,7 +131,7 @@ namespace WhatNEXTUI
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
-        {
+        {   
             TaskReminder.GetInstance().CallMeBack(taskScheduler_Schedule);
         }
 
