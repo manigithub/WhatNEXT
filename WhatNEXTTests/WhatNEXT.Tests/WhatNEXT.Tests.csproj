@@ -34,9 +34,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>..\..\WhatNEXT\NInjectBinaries\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="nunit-console-runner">
       <HintPath>..\..\WhatNEXT\NunitBinaries\lib\nunit-console-runner.dll</HintPath>
     </Reference>
