@@ -9,7 +9,6 @@
   <RecentFiles>
     <RecentFiles>
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskListWithEvents.cs" caret="213" fromTop="9" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/d:NinjectBinaries/f:Ninject.xml" caret="0" fromTop="0" />
       <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:TaskSchedulerTests.cs" caret="777" fromTop="21" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ConsoleTaskEventNotifier.cs" caret="604" fromTop="17" />
       <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:TaskEventGeneratorTests.cs" caret="748" fromTop="17" />
@@ -19,55 +18,56 @@
       <File id="9821CB5D-BC5F-4CF2-BF87-F8EE06188C42/f:SimpleTaskListTests.cs" caret="568" fromTop="21" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskAddEventArgs.cs" caret="307" fromTop="13" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:CommandInterpreter.cs" caret="290" fromTop="14" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNEXT.cs" caret="0" fromTop="0" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskTextParser.cs" caret="259" fromTop="10" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskItem.cs" caret="474" fromTop="20" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:App.xaml.cs" caret="565" fromTop="12" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNextFacade.cs" caret="748" fromTop="11" />
       <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:Window1.xaml" caret="396" fromTop="6" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskList.cs" caret="185" fromTop="10" />
       <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="830" fromTop="31" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ScheduledTasksLogger.cs" caret="288" fromTop="13" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskDelegates.cs" caret="364" fromTop="9" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="396" fromTop="5" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="561" fromTop="0" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="974" fromTop="20" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduleEventArgs.cs" caret="0" fromTop="0" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskReminder.cs" caret="171" fromTop="9" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2318" fromTop="16" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="409" fromTop="3" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:UIDelegates.cs" caret="158" fromTop="7" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskDelegates.cs" caret="294" fromTop="9" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNEXT.cs" caret="531" fromTop="19" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNextFacade.cs" caret="430" fromTop="16" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="1139" fromTop="21" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:App.xaml.cs" caret="250" fromTop="4" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduleEventArgs.cs" caret="132" fromTop="7" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ScheduledTasksLogger.cs" caret="1398" fromTop="30" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="796" fromTop="21" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskReminder.cs" caret="262" fromTop="10" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="786" fromTop="17" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="514" fromTop="5" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="4569" fromTop="2" />
     </RecentFiles>
     <RecentEdits>
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2073" fromTop="19" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNextFacade.cs" caret="1098" fromTop="14" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:WhatNextFacade.cs" caret="433" fromTop="16" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="805" fromTop="5" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="786" fromTop="7" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="587" fromTop="23" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="1785" fromTop="22" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="1246" fromTop="28" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="815" fromTop="21" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="802" fromTop="32" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:SimpleTaskList.cs" caret="606" fromTop="21" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="395" fromTop="5" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="1066" fromTop="28" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="1030" fromTop="26" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskEventGenerator.cs" caret="1387" fromTop="28" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="1506" fromTop="19" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="771" fromTop="22" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="714" fromTop="22" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="616" fromTop="17" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskDelegates.cs" caret="364" fromTop="9" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="203" fromTop="7" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:ITaskReminder.cs" caret="245" fromTop="10" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="1062" fromTop="29" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="1031" fromTop="26" />
-      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="1246" fromTop="20" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2076" fromTop="22" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="679" fromTop="9" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2398" fromTop="19" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2294" fromTop="24" />
-      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="409" fromTop="3" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="14" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="10" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="22" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="30" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="18" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="15" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="1388" fromTop="19" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5510" fromTop="25" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5475" fromTop="17" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5640" fromTop="24" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2412" fromTop="17" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2271" fromTop="15" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskReminder.cs" caret="1154" fromTop="21" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="2459" fromTop="23" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="2314" fromTop="30" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="395" fromTop="14" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="2690" fromTop="25" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="169" fromTop="6" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5189" fromTop="24" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="813" fromTop="23" />
+      <File id="549AF59A-6673-4CB1-A1BD-A68F40C288A6/f:TaskScheduler.cs" caret="1763" fromTop="14" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="5059" fromTop="22" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="4352" fromTop="16" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="3863" fromTop="8" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="4335" fromTop="22" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="4139" fromTop="15" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="3275" fromTop="24" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml" caret="514" fromTop="5" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="4648" fromTop="27" />
+      <File id="5A685B5B-862E-4B2F-BF0F-715E2A183307/f:MainWindow.xaml.cs" caret="2661" fromTop="27" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -85,9 +85,9 @@
     <ItemStatistics item="Default">
       <Item value="public" priority="19" />
       <Item value="void" priority="9" />
-      <Item value="using" priority="8" />
+      <Item value="using" priority="10" />
       <Item value="Ninject" priority="1" />
-      <Item value="new" priority="26" />
+      <Item value="new" priority="31" />
       <Item value="ApplicationException`0" priority="1" />
       <Item value="ITaskList`0" priority="8" />
       <Item value="Exception`0" priority="1" />
@@ -98,32 +98,32 @@
       <Item value="Task`0" priority="0" />
       <Item value="prop" priority="1" />
       <Item value="Int64`0" priority="3" />
-      <Item value="System" priority="8" />
+      <Item value="System" priority="10" />
       <Item value="Net" priority="0" />
       <Item value="Sockets" priority="0" />
       <Item value="IPAddress`0" priority="0" />
-      <Item value="TaskItem`0" priority="12" />
-      <Item value="taskItem" priority="15" />
+      <Item value="TaskItem`0" priority="16" />
+      <Item value="taskItem" priority="22" />
       <Item value="string" priority="5" />
-      <Item value="private" priority="15" />
+      <Item value="private" priority="20" />
       <Item value="TaskItem" priority="3" />
       <Item value="List" priority="0" />
-      <Item value="List&lt;TaskItem&gt;" priority="0" />
+      <Item value="List&lt;TaskItem&gt;" priority="1" />
       <Item value="return" priority="8" />
-      <Item value="if" priority="11" />
+      <Item value="if" priority="16" />
       <Item value="taskItems" priority="1" />
       <Item value="Convert`0" priority="1" />
       <Item value="taskID" priority="1" />
-      <Item value="else" priority="4" />
+      <Item value="else" priority="7" />
       <Item value="throw" priority="2" />
       <Item value="AbandonedMutexException" priority="0" />
       <Item value="ID" priority="2" />
       <Item value="Details" priority="1" />
       <Item value="ApplicationException" priority="1" />
-      <Item value="null" priority="1" />
+      <Item value="null" priority="2" />
       <Item value="AppDomainUnloadedException" priority="0" />
-      <Item value="int" priority="2" />
-      <Item value="long" priority="0" />
+      <Item value="int" priority="3" />
+      <Item value="long" priority="1" />
       <Item value="static" priority="6" />
       <Item value="IKernel`0" priority="1" />
       <Item value="kernel" priority="0" />
@@ -137,13 +137,13 @@
       <Item value="interface" priority="0" />
       <Item value="event" priority="0" />
       <Item value="ITaskListWithEvents`0" priority="5" />
-      <Item value="e" priority="11" />
+      <Item value="e" priority="12" />
       <Item value="CrossAppDomainDelegate`0" priority="1" />
       <Item value="ctor" priority="2" />
       <Item value="taskList" priority="2" />
       <Item value="ThreadStaticAttribute`0" priority="0" />
       <Item value="Threading" priority="2" />
-      <Item value="Thread`0" priority="4" />
+      <Item value="Thread`0" priority="6" />
       <Item value="base" priority="0" />
       <Item value="taskListWithEvents" priority="0" />
       <Item value="ConsoleTaskEventNotifier`0" priority="0" />
@@ -158,11 +158,11 @@
       <Item value="TaskScheduleEventArgs" priority="1" />
       <Item value="timeReminder" priority="0" />
       <Item value="TaskScheduler" priority="0" />
-      <Item value="Timer" priority="2" />
+      <Item value="Timer" priority="3" />
       <Item value="Timer`0" priority="2" />
       <Item value="taskTimer" priority="1" />
       <Item value="Tasks" priority="0" />
-      <Item value="object" priority="0" />
+      <Item value="object" priority="2" />
       <Item value="TimerCallback" priority="0" />
       <Item value="OnSchedule`0" priority="0" />
       <Item value="commandInterpreter" priority="0" />
@@ -171,12 +171,12 @@
       <Item value="task" priority="2" />
       <Item value="const" priority="0" />
       <Item value="Enter" priority="0" />
-      <Item value="MessageBox`0" priority="0" />
-      <Item value="textBoxTaskDetails" priority="4" />
+      <Item value="MessageBox`0" priority="4" />
+      <Item value="textBoxTaskDetails" priority="6" />
       <Item value="Windows" priority="0" />
       <Item value="Forms" priority="1" />
       <Item value="Drawing" priority="0" />
-      <Item value="Minimized" priority="0" />
+      <Item value="Minimized" priority="2" />
       <Item value="Microsoft" priority="0" />
       <Item value="Shell" priority="0" />
       <Item value="FileStyleUriParser`0" priority="0" />
@@ -187,7 +187,7 @@
       <Item value="taskParser" priority="1" />
       <Item value="TaskTextParser`0" priority="0" />
       <Item value="TaskListFactory`0" priority="0" />
-      <Item value="DateTime`0" priority="2" />
+      <Item value="DateTime`0" priority="3" />
       <Item value="ScheduledTasksLogger`0" priority="0" />
       <Item value="tasksLogger" priority="0" />
       <Item value="ScheduledTasksLogger" priority="0" />
@@ -198,11 +198,40 @@
       <Item value="WhatNextFacade" priority="0" />
       <Item value="TaskReminder" priority="0" />
       <Item value="TaskReminder`0" priority="0" />
-      <Item value="btnSnooze" priority="0" />
-      <Item value="true" priority="0" />
+      <Item value="btnSnooze" priority="1" />
+      <Item value="true" priority="2" />
       <Item value="OnUpdate`0" priority="0" />
       <Item value="RemindMe`0" priority="0" />
       <Item value="RemindTask`0" priority="0" />
+      <Item value="Delegate`0" priority="0" />
+      <Item value="UpdateUIControls`0" priority="0" />
+      <Item value="UpdateUI`0" priority="0" />
+      <Item value="bool" priority="0" />
+      <Item value="WindowStyle" priority="0" />
+      <Item value="false" priority="1" />
+      <Item value="Concurrent" priority="1" />
+      <Item value="ConcurrentBag" priority="0" />
+      <Item value="ital" priority="0" />
+      <Item value="btnCompleted" priority="1" />
+      <Item value="ConcurrentQueue" priority="3" />
+      <Item value="app" priority="0" />
+      <Item value="TextBox`0" priority="1" />
+      <Item value="Background" priority="0" />
+      <Item value="taskItemsScheduled" priority="1" />
+      <Item value="Boolean`0" priority="0" />
+      <Item value="Window`0" priority="0" />
+      <Item value="RichTextBox`0" priority="0" />
+      <Item value="lock" priority="0" />
+      <Item value="readonly" priority="0" />
+      <Item value="IO" priority="0" />
+      <Item value="File`0" priority="1" />
+      <Item value="FileInfo" priority="0" />
+      <Item value="TextWriter`0" priority="0" />
+      <Item value="writer" priority="1" />
+      <Item value="Collections" priority="0" />
+      <Item value="ConcurrentQueue&lt;Timer&gt;" priority="0" />
+      <Item value="ConcurrentQueue&lt;long&gt;" priority="0" />
+      <Item value="currentTask" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
       <Item value="IsTrue`0" priority="3" />
@@ -216,15 +245,17 @@
       <Item value="Bind`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Add`0" priority="0" />
+      <Item value="Add`0" priority="1" />
       <Item value="Find`0" priority="0" />
-      <Item value="Count" priority="1" />
+      <Item value="Count" priority="3" />
       <Item value="IndexOf`0" priority="0" />
+      <Item value="Remove`0" priority="0" />
+      <Item value="RemoveAt`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WhatNEXT.TaskItem">
-      <Item value="ID" priority="9" />
+      <Item value="ID" priority="13" />
       <Item value="TimeReminder" priority="4" />
-      <Item value="Details" priority="3" />
+      <Item value="Details" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Convert">
       <Item value="ToInt64`0" priority="1" />
@@ -255,7 +286,7 @@
     <ItemStatistics item="Qualified:WhatNEXT.TaskAddEventArgs">
       <Item value="TaskID" priority="4" />
       <Item value="task" priority="2" />
-      <Item value="Task" priority="4" />
+      <Item value="Task" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Ninject.Syntax.IBindingWhenInNamedWithOrOnSyntax`1">
       <Item value="WhenInjectedInto`0" priority="0" />
@@ -269,7 +300,7 @@
       <Item value="UpdateTask`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Threading.Thread">
-      <Item value="Sleep`0" priority="1" />
+      <Item value="Sleep`0" priority="5" />
       <Item value="CurrentThread" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@WhatNEXT.ConsoleTaskEventNotifier">
@@ -288,7 +319,7 @@
     <ItemStatistics item="Qualified:WhatNEXT.TaskScheduleEventArgs">
       <Item value="TaskID" priority="0" />
       <Item value="TimeReminder" priority="0" />
-      <Item value="Task" priority="4" />
+      <Item value="Task" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Threading.Thread">
       <Item value="Join`0" priority="2" />
@@ -301,11 +332,14 @@
       <Item value="Key" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Windows.MessageBox">
-      <Item value="Show`0" priority="0" />
+      <Item value="Show`0" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Controls.TextBox">
-      <Item value="Text" priority="4" />
+      <Item value="Text" priority="7" />
       <Item value="Focus`0" priority="0" />
+      <Item value="Foreground" priority="2" />
+      <Item value="Background" priority="1" />
+      <Item value="IsEnabled" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="Trim`0" priority="4" />
@@ -315,12 +349,15 @@
       <Item value="Substring`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WhatNEXTUI.MainWindow">
-      <Item value="WindowState" priority="1" />
-      <Item value="textBoxTaskDetails" priority="1" />
+      <Item value="WindowState" priority="3" />
+      <Item value="textBoxTaskDetails" priority="3" />
       <Item value="taskItem" priority="0" />
+      <Item value="IsEnabled" priority="0" />
+      <Item value="taskItemsScheduled" priority="0" />
+      <Item value="Dispatcher" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Empty" priority="0" />
+      <Item value="Empty" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.StringSplitOptions">
       <Item value="RemoveEmptyEntries" priority="0" />
@@ -332,14 +369,14 @@
       <Item value="DesktopDirectory" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
-      <Item value="Now" priority="3" />
+      <Item value="Now" priority="4" />
       <Item value="UtcNow" priority="0" />
       <Item value="FromFileTimeUtc`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="ToUniversalTime`0" priority="0" />
       <Item value="ToString`0" priority="0" />
-      <Item value="ToShortTimeString`0" priority="0" />
+      <Item value="ToShortTimeString`0" priority="1" />
       <Item value="ToLongTimeString`0" priority="0" />
       <Item value="ToFileTimeUtc`0" priority="0" />
     </ItemStatistics>
@@ -354,12 +391,63 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Controls.Button">
       <Item value="IsEnabled" priority="0" />
+      <Item value="Dispatcher" priority="2" />
+      <Item value="Foreground" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.WindowState">
       <Item value="Normal" priority="0" />
+      <Item value="Minimized" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WhatNEXT.ITaskReminder">
       <Item value="CallMeBack`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Threading.Dispatcher">
+      <Item value="Invoke`0" priority="1" />
+      <Item value="Thread" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Concurrent.ConcurrentBag`1">
+      <Item value="TryTake`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Concurrent.ConcurrentQueue`1">
+      <Item value="Enqueue`0" priority="2" />
+      <Item value="TryDequeue`0" priority="1" />
+      <Item value="IsEmpty" priority="5" />
+      <Item value="Count" priority="5" />
+      <Item value="TryPeek`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WhatNEXTUI.App">
+      <Item value="MainWindow" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Window">
+      <Item value="ShowDialog`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Semaphore">
+      <Item value="WaitOne`0" priority="0" />
+      <Item value="Release`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Media.Brush">
+      <Item value="Freeze`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Window">
+      <Item value="ForegroundProperty" priority="0" />
+      <Item value="IsEnabledProperty" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.RichTextBox">
+      <Item value="Text" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="OpenWrite`0" priority="2" />
+      <Item value="CreateText`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="AppendText`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine`0" priority="0" />
+      <Item value="Flush`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="Task" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatNEXT.Tests", "..\..\Wha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatNEXTUI", "..\WhatNEXTUI\WhatNEXTUI.csproj", "{5A685B5B-862E-4B2F-BF0F-715E2A183307}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEDE5B40-B8AC-4D35-AF0A-B79343FDD53E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NinjectBinaries", "NinjectBinaries", "{5F0A8650-94ED-419F-9D44-BF02B5AA0987}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{0B28D8EC-AD3C-417A-A279-6DCCA6A07EE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +56,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F0A8650-94ED-419F-9D44-BF02B5AA0987} = {EEDE5B40-B8AC-4D35-AF0A-B79343FDD53E}
+		{0B28D8EC-AD3C-417A-A279-6DCCA6A07EE9} = {5F0A8650-94ED-419F-9D44-BF02B5AA0987}
 	EndGlobalSection
 EndGlobal
