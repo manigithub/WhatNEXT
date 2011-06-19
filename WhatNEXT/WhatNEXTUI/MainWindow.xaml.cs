@@ -35,11 +35,19 @@ namespace WhatNEXTUI
                 if (textBoxTaskDetails.Text.Trim().Length > 0)
                 {
                     MessageBox.Show("Task Added." + textBoxTaskDetails.Text);
-                    this.WindowState = WindowState.Minimized;
-                    currentWindowState = WindowState.Minimized;
                     TaskReminder.GetInstance().RemindTask(this.textBoxTaskDetails.Text.Trim());
+                    this.textBoxTaskDetails.Text = string.Empty;
 
 
+                    if (this.taskItemsScheduled.Count > 0)
+                    {
+                        ShowNextTask();
+                    }
+                    else
+                    {
+                        this.WindowState = WindowState.Minimized;
+                        currentWindowState = WindowState.Minimized;
+                    }
                 }
                 else
                 {
@@ -51,17 +59,17 @@ namespace WhatNEXTUI
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            //this.textBoxTaskDetails.Text = string.Empty;
+            //currentWindowState = WindowState;
         }
 
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
-            //this.textBoxTaskDetails.Text = string.Empty;
+
         }
 
         private void Window_StateChanged(object sender, EventArgs e)
         {
-
+            currentWindowState = WindowState;
         }
         public void taskScheduler_Schedule(object sender, TaskScheduleEventArgs e)
         {
@@ -80,26 +88,38 @@ namespace WhatNEXTUI
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, new UpdateUIControls(RemindTaskToUser));
             }
         }
+        private void ShowNextTask()
+        {
+            textBoxTaskDetails.Text = "";
+            DisableUIControls();
+            //Thread.Sleep(2000);
+            MessageBox.Show("Loading Next Task...");
+            RemindTaskToUser();
+        }
 
         private void RemindTaskToUser()
         {
 
             TaskItem taskItem = null;
             btnSnooze.IsEnabled = false;
-            btnCompleted.IsEnabled = false;
-            long currentTask = -1;
+            btnCompleted.IsEnabled = false;            
 
             if (taskItemsScheduled.TryDequeue(out taskItem) && taskItem != null && taskItem.ID > 0 /* && currentTaskIdShown.TryPeek(out currentTask) && currentTask != taskItem.ID*/)
             {
-                
+
                 taskItemsCompleted.Enqueue(taskItem);
-                btnSnooze.IsEnabled = true;
-                btnCompleted.IsEnabled = true;
-                textBoxTaskDetails.IsEnabled = true;
-                textBoxTaskDetails.Text = taskItem.Details;
-                WindowState = WindowState.Normal;
-                currentWindowState = WindowState.Normal;
+                SetControlsForTaskRemind(taskItem);
+
             }
+        }
+        private void SetControlsForTaskRemind(TaskItem taskItem)
+        {
+            btnSnooze.IsEnabled = true;
+            btnCompleted.IsEnabled = true;
+            textBoxTaskDetails.IsEnabled = true;
+            textBoxTaskDetails.Text = taskItem.Details;
+            WindowState = WindowState.Normal;
+            currentWindowState = WindowState.Normal;
         }
 
         private void btnSnooze_Click(object sender, RoutedEventArgs e)
@@ -108,11 +128,7 @@ namespace WhatNEXTUI
 
             if (!taskItemsScheduled.IsEmpty)
             {
-                textBoxTaskDetails.Text = "";
-                DisableUIControls();
-                //Thread.Sleep(2000);
-                MessageBox.Show("Loading Next Task...");
-                RemindTaskToUser();
+                ShowNextTask();
             }
             else
             {
@@ -120,7 +136,6 @@ namespace WhatNEXTUI
                 currentWindowState = WindowState.Minimized;
                 //isDispatcherRequired = true;
             }
-
         }
 
         private void DisableUIControls()
@@ -131,7 +146,7 @@ namespace WhatNEXTUI
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
-        {   
+        {
             TaskReminder.GetInstance().CallMeBack(taskScheduler_Schedule);
         }
 
@@ -144,10 +159,7 @@ namespace WhatNEXTUI
                 textBoxTaskDetails.Text = "";
                 if (!taskItemsScheduled.IsEmpty)
                 {
-                    DisableUIControls();
-                    //Thread.Sleep(2000)
-                    MessageBox.Show("Loading Next Task...");
-                    RemindTaskToUser();
+                    ShowNextTask();
                 }
                 else
                 {
