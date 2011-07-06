@@ -23,6 +23,7 @@ namespace WhatNEXTUI
         private WindowState currentWindowState = System.Windows.WindowState.Normal;
         private ConcurrentQueue<long> currentTaskIdShown = new ConcurrentQueue<long>();
         static object locker = new object();
+        
 
         public MainWindow()
         {
@@ -87,6 +88,10 @@ namespace WhatNEXTUI
                 //MessageBox.Show("Invoked from dispatcher ");
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, new UpdateUIControls(RemindTaskToUser));
             }
+            //else if (currentWindowState == WindowState.Normal && taskItemsScheduled.Count > 0 && )
+            //{
+            //    Dispatcher.BeginInvoke(DispatcherPriority.Normal, () => { MessageBox.Show("Tasks are in Queue. Finish Entering the new Task")});
+            //}
         }
         private void ShowNextTask()
         {
